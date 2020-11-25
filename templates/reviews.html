@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Heat Reviews</title>
+</head>
+<body>
+    {% for reviews in reviews %}
+        {{ reviews.category_name }} <br>
+        {{ reviews.title }} <br>
+        {{ reviews.release_date }} <br>
+        {{ reviews.created_by }} <br>
+        {{ reviews.genre }} <br>
+        {{ reviews.length }} <br>
+        {{ reviews.review }} <br>
+        {{ reviews. userId }} <br>
+    {% endfor %}
+</body>
+</html>
