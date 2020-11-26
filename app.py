@@ -22,10 +22,10 @@ users = mongo.db.users
 
 
 @app.route("/")
-@app.route("/get_reviews")
-def get_reviews():
+@app.route("/latest_reviews")
+def latest_reviews():
     reviews = mongo.db.reviews.find()
-    return render_template("reviews.html", reviews=reviews)
+    return render_template("latest_reviews.html", reviews=reviews)
 
 
 if __name__ == "__main__":
