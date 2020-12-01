@@ -2,6 +2,26 @@
 {% block content %}
 
 
+    <ul class="collapsible">
+        {% for reviews in reviews %}
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons"></i>
+                <strong> {{ reviews.title }} </strong>: A Review by {{ reviews.submitte_by }}
+            </div>
+            <div class="collapsible-body">
+                <h3>{{ reviews.title }} </h3>
+                <p>Release Date: {{ reviews.release_date }}</p>
+                <p>Created by: {{ reviews.created_by }}</p>
+                <p>Genre: {{ reviews.genre }}</p>
+                <p>Length: {{ reviews.length }}</p>
+                <p>Review: {{ reviews.review }}</p>
+                <p><em>by: {{ reviews.submitted_by }}</em></p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
         <div class="slider">
         <ul class="slides">
             <li>
@@ -48,26 +68,6 @@
         </ul>
     </div>
 
-    <ul class="collapsible">
-        {% for reviews in reviews %}
-        <li>
-            <div class="collapsible-header">
-                <i class="material-icons"></i>
-                <strong> {{ reviews.title }} </strong>: A Review by {{ reviews. userId }}
-            </div>
-            <div class="collapsible-body">
-                <strong>{{ reviews.category_name }}</strong>
-                <h3>{{ reviews.title }} </h3>
-                <h6>Release Date: {{ reviews.release_date }}</h6>
-                <h6>Created by: {{ reviews.created_by }}</h6>
-                <h6>Genre: {{ reviews.genre }}</h6>
-                <h6>Length: {{ reviews.length }}</h6>
-                <h6>Review: {{ reviews.review }}</h6>
-                <h6>Reviewed by: {{ reviews. userId }}</h6>
-                 <br>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+    
 
 {% endblock %}

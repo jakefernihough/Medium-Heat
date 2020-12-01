@@ -100,14 +100,30 @@ def logout():
 
 
 # Latest Reviews Page
-@app.route("/latest_reviews")
+@app.route("/latest_reviews", methods=["GET", "POST"])
 def latest_reviews():
     reviews = list(mongo.db.reviews.find())
     return render_template("latest_reviews.html", reviews=reviews)
 
 
-@app.route("/add_reviews")
+@app.route("/add_reviews", methods=["GET", "POST"])
 def add_reviews():
+    if request.method == "POST":
+        review = {
+            "category_name": request.form.get("category_name"),
+            "title": request.form.get("title"),
+            "release_date": request.form.get("release_date"),
+            "created_by": request.form.get("created_by"),
+            "genre": request.form.get("genre"),
+            "length": request.form.get("length"),
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating"),
+            "submitted_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Submitted")
+        return redirect(url_for("latest_reviews"))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_reviews.html", categories=categories)
 

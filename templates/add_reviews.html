@@ -7,15 +7,16 @@
         <div class="input-field col s12">
             <select id="category_name" name="category_name" class="validate" required>
                 <option value="" disabled selected>Choose your category</option>
-                {% for category in categories %}
-                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                {% for categories in categories %}
+                    <option value="{{ categories.category_name }}">{{ categories.category_name }}</option>
                 {% endfor %}
             </select>
-            <label>Category</label>
+            <label>Categories</label>
         </div>
     </div>
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('latest_reviews') }}">
+            <!--Title-->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="prefix"></i>
@@ -24,6 +25,7 @@
                     <label for="title">Title</label>
                 </div>
             </div>
+            <!--Release Date -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix"></i>
@@ -31,6 +33,7 @@
                     <label for="release_date">Release Date</label>
                 </div>
            </div>
+           <!--Created By-->
            <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix"></i>
@@ -38,6 +41,7 @@
                     <label for="created_by">Created By</label>
                 </div>
            </div>
+           <!-- Genre -->
            <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix"></i>
@@ -45,6 +49,7 @@
                     <label for="genre">Genre</label>
                 </div>
            </div>
+           <!--Length -->
            <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix"></i>
@@ -52,6 +57,7 @@
                     <label for="length">Length</label>
                 </div>
             </div>
+            <!-- Your Review -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix"></i>
@@ -60,9 +66,10 @@
                     <label for="review">Your Review</label>
                 </div>
             </div>
-            <div class="row">
+            <!-- Rating -->
+            <div class="row card-panel grey lighten-5">
                 <label for="rating">Rating</label>
-                <select id="rating" name="rating" class="validate"  required>
+                <select id="rating" name="rating" class="validate" required>
                     <option value="" selected>Select</option>
                     <option value="&#11088;">&#11088;</option>
                     <option value="&#11088; &#11088;">&#11088; &#11088;</option>
@@ -70,6 +77,14 @@
                     <option value="&#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088;</option>
                     <option value="&#11088; &#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088; &#11088;</option>
                 </select>
+            </div>
+            <!-- Submit -->
+            <div class="row card-panel grey lighten-5">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Add Review <i class="fas fa-check-circle"></i>
+                    </button>
+                </div>
             </div>
         </form>
     </div>
