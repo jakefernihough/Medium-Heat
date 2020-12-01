@@ -98,11 +98,17 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
 # Latest Reviews Page
 @app.route("/latest_reviews")
 def latest_reviews():
-    reviews = mongo.db.reviews.find()
+    reviews = list(mongo.db.reviews.find())
     return render_template("latest_reviews.html", reviews=reviews)
+
+
+@app.route("/add_reviews")
+def add_reviews():
+    return render_template("add_reviews.html")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add Review</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="prefix"></i>
+                    <input id="title" name="title" type="text" minlength="5" maxlength="50"
+                        class="validate" required>
+                    <label for="title">Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
+                    <label for="release_date">Release Date</label>
+                </div>
+           </div>
+           <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input id="created_by" name="created_by" type="tel" class="validate" required>
+                    <label for="created_by">Created By</label>
+                </div>
+           </div>
+           <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input id="genre" name="genre" type="tel" class="validate" required>
+                    <label for="genre">Genre</label>
+                </div>
+           </div>
+           <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input id="length" name="length" type="tel" class="validate" required>
+                    <label for="length">Length</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <textarea id="review" name="review" class="materialize-textarea validate" minlength="30"
+                        maxlength="500" required></textarea>
+                    <label for="review">Your Review</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

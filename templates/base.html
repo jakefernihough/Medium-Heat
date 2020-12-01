@@ -25,7 +25,7 @@
                         <li><a href="{{ url_for('profile', username=session[]) }}">Profile</a></li>
                         <li><a href="{{ url_for('latest_reviews') }}">Latest Reviews</a></li>
                         <li><a href="">Categories</a></li>
-                        <li><a href="">Add Review</a></li>
+                        <li><a href="{{ url_for('add_reviews') }}">Add Review</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -42,7 +42,7 @@
                 <li><a href="{{ url_for('profile', username=session[]) }}">Profile</a></li>
                 <li><a href="{{ url_for('latest_reviews') }}">Latest Reviews</a></li>
                 <li><a href="">Categories</a></li>
-                <li><a href="">Add Review</a></li>
+                <li><a href="{{ url_for('add_reviews') }}">Add Review</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>

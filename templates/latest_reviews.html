@@ -1,15 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for reviews in reviews %}
-        {{ reviews.category_name }} <br>
-        {{ reviews.title }} <br>
-        {{ reviews.release_date }} <br>
-        {{ reviews.created_by }} <br>
-        {{ reviews.genre }} <br>
-        {{ reviews.length }} <br>
-        {{ reviews.review }} <br>
-        {{ reviews. userId }} <br>
-    {% endfor %}
+
+        <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                <div class="caption center-align deep-purple-text lighten-2 text-shadow">
+                    <h3>WELCOME TO MEDIUM HEAT REVIEWS</h3>
+                    <h5 class="light grey-text text-lighten-3">We build up your fire for all things entertainment.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+                <div class="caption center-align deep-purple-text lighten-2 text-shadow">
+                    <a href="films.html">
+                    <i class="cat-icon fas fa-film"></i>
+                    <h3>FILMS</h3>
+                    <h5 class="light grey-text text-lighten-3">Read the latest from our film fanatics!</h5>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+                <div class="caption left-align deep-purple-text lighten-2 text-shadow">
+                    <i class="cat-icon fas fa-tv"></i>
+                    <h3>TELEVISION</h3>
+                    <h5 class="light grey-text text-lighten-3">Find out what is binge-worthy!</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+                <div class="caption right-align deep-purple-text lighten-2 text-shadow">
+                    <i class="cat-icon fas fa-book"></i>
+                    <h3>BOOKS</h3>
+                    <h5 class="light grey-text text-lighten-3">Start your fantasies, right here!</h5>
+                </div>
+            </li>
+            <li>
+                <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+                <div class="caption center-align deep-purple-text lighten-2 text-shadow">
+                    <i class="cat-icon fas fa-gamepad"></i>
+                    <h3>VIDEO GAMES</h3>
+                    <h5 class="light grey-text text-lighten-3">Lose yourself in another world!</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="collapsible">
+        {% for reviews in reviews %}
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons"></i>
+                <strong> {{ reviews.title }} </strong>: A Review by {{ reviews. userId }}
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ reviews.category_name }}</strong>
+                <h3>{{ reviews.title }} </h3>
+                <h6>Release Date: {{ reviews.release_date }}</h6>
+                <h6>Created by: {{ reviews.created_by }}</h6>
+                <h6>Genre: {{ reviews.genre }}</h6>
+                <h6>Length: {{ reviews.length }}</h6>
+                <h6>Review: {{ reviews.review }}</h6>
+                <h6>Reviewed by: {{ reviews. userId }}</h6>
+                 <br>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
