@@ -22,7 +22,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('about') }}">About</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session[]) }}">Profile</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('latest_reviews') }}">Latest Reviews</a></li>
                         <li><a href="">Categories</a></li>
                         <li><a href="{{ url_for('add_reviews') }}">Add Review</a></li>
@@ -39,7 +39,7 @@
             <li><h4 class="center-align deep-purple-text text-lighten-2 text-shadow">Medium Heat Reviews</h4></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session[]) }}">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('latest_reviews') }}">Latest Reviews</a></li>
                 <li><a href="">Categories</a></li>
                 <li><a href="{{ url_for('add_reviews') }}">Add Review</a></li>
